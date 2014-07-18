@@ -1,0 +1,25 @@
+{
+  "name": "grouper",
+  "version": "0.0.0",
+  "description": "Library functions for grouping/sorting/padding reporting data",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/michiel/grouper-js.git"
+  },
+  "keywords": [
+    "reporting",
+    "sorting",
+    "padding",
+    "grouping"
+  ],
+  "author": "Michiel Kalkman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michiel/grouper-js/issues"
+  },
+  "homepage": "https://github.com/michiel/grouper-js"
+}
