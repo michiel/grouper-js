@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/michiel/grouper-js/issues"
   },
-  "homepage": "https://github.com/michiel/grouper-js"
+  "homepage": "https://github.com/michiel/grouper-js",
+  "dependencies": {
+    "moment": "^2.7.0"
+  }
 }
