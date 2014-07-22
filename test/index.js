@@ -3,6 +3,10 @@ var expect = require('expect.js');
 var moment = require('moment');
 
 var Grouper = require('../lib/grouper.js');
+var Util    = require('../lib/util.js');
+
+var groups     = Util.timeIntervals;
+var aggregates = Util.aggregateFunctions;
 
 var RANGESIZE = 1000;
 
@@ -24,15 +28,12 @@ function generateDatePoint(fn) {
 function generateDatePoints(fn) {
   var datePoints = [];
 
-  for (var i=0; i<=RANGESIZE; i++) {
+  for (var i=0; i<RANGESIZE; i++) {
     datePoints.push(generateDatePoint(fn));
   }
 
   return datePoints;
 }
-
-var groups     = ['minute', 'hour', 'day', 'month', 'year'];
-var aggregates = ['avg', 'min', 'max', 'sum'];
 
 var datePoints = []; 
 
@@ -57,13 +58,14 @@ describe('Grouper', function() {
             grouper.setData(datePoints);
             grouper.processData();
 
+
             assert.equal(grouper.getData().length, RANGESIZE);
           });
       });
 
     describe('groupBy#day', function() {
 
-        it('should have RANGESIZE elements when days grouped by day', function() {
+        it('should have 1000 elements when days grouped by day', function() {
 
             datePoints = generateDatePoints(incDay);
             var grouper = new Grouper({
@@ -79,7 +81,7 @@ describe('Grouper', function() {
 
     describe('groupBy#month', function() {
 
-        it('should have 41 elements when days grouped by month', function() {
+        it('should have 40 elements when days grouped by month', function() {
 
             datePoints = generateDatePoints(incDay);
 
@@ -90,24 +92,9 @@ describe('Grouper', function() {
             grouper.setData(datePoints);
             grouper.processData();
 
-            assert.equal(grouper.getData().length, 41);
+            assert.equal(grouper.getData().length, 40);
           });
       });
 
-    describe('groupBy#year', function() {
-
-        it('should have 3 elements when days grouped by year', function() {
-
-            datePoints = generateDatePoints(incDay);
-            var grouper = new Grouper({
-                groupBy     : 'year'
-              });
-
-            grouper.setData(datePoints);
-            grouper.processData();
-
-            assert.equal(grouper.getData().length, 3);
-          });
-      });
 
   });
