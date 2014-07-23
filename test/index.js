@@ -1,12 +1,11 @@
+'use strict';
+
+/* global describe, it, beforeEach */
+
 var assert = require('assert');
-var expect = require('expect.js');
 var moment = require('moment');
 
 var Grouper = require('../lib/grouper.js');
-var Util    = require('../lib/util.js');
-
-var groups     = Util.timeIntervals;
-var aggregates = Util.aggregateFunctions;
 
 var RANGESIZE = 1000;
 
