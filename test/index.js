@@ -77,6 +77,38 @@ describe('Grouper', function() {
           });
       });
 
+    describe('groupBy#days/second', function() {
+
+        it('should have 1000 elements when days grouped by second', function() {
+
+            datePoints = generateDatePoints(incDay, 1000);
+            var grouper = new Grouper({
+                groupBy     : 'second'
+              });
+
+            grouper.setData(datePoints);
+            grouper.processData();
+
+            assert.equal(grouper.getData().length, 1000);
+          });
+      });
+
+    describe('groupBy#seonds/day', function() {
+
+        it('should have 1 element when 1000 seconds grouped by day', function() {
+
+            datePoints = generateDatePoints(incSecond, 1000);
+            var grouper = new Grouper({
+                groupBy     : 'day'
+              });
+
+            grouper.setData(datePoints);
+            grouper.processData();
+
+            assert.equal(grouper.getData().length, 1);
+          });
+      });
+
     describe('groupBy#minute', function() {
 
         it('should have 1000 elements when days grouped by minute', function() {
