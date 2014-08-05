@@ -1,0 +1,32 @@
+{
+  "name": "grouper-js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/michiel/grouper-js",
+  "authors": [
+    "Michiel Kalkman <michielkalkman+bower@gmail.com>"
+  ],
+  "description": "Grouping and padding of timeseries data",
+  "main": "lib/grouper.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "grouping",
+    "padding",
+    "timeseries",
+    "reporting",
+    "aggregate",
+    "aggregation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
